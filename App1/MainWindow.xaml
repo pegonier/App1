@@ -1,0 +1,39 @@
+<Window x:Class="Pooltriage2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:Pooltriage2._0"
+        Title="Pooltriage2._0" >
+
+    <Grid x:Name="MainGrid">
+        <GridView ItemsSource="{Binding MyItems}">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="local:BuildArzt">
+                    <StackPanel Padding="2" Orientation="Horizontal" Background="DarkBlue" Margin="2" CornerRadius="2">
+                        <TextBlock Text="{Binding arztName}" FontWeight="Bold" FontSize="12" Width="120"/>
+                        <TextBox Text="{Binding befundung}" Margin="0,0,0,0" Width="50" Height="20"/>
+                        <StackPanel Orientation="Horizontal" Spacing="0">
+                            <CheckBox IsChecked="{Binding externe}" Content="Externe" IsEnabled="True" FontSize="10"/>
+                            <CheckBox IsChecked="{Binding mr}" Content="MR" IsEnabled="True" FontSize="10"/>
+                            <CheckBox IsChecked="{Binding ct}" Content="CT" IsEnabled="True" FontSize="10"/>
+                            <CheckBox IsChecked="{Binding dl}" Content="DL" IsEnabled="True" FontSize="10"/>
+                            <CheckBox IsChecked="{Binding us}" Content="US" IsEnabled="True" FontSize="10"/>
+                            <CheckBox IsChecked="{Binding dexa}" Content="Dexa" IsEnabled="True" FontSize="10"/>
+                            <CheckBox IsChecked="{Binding istAnwesend}" Content="Ist Anwesend" IsEnabled="True" FontSize="10"/>
+                            <TextBox Text="{Binding rx100}" Margin="0,0,0,0" Width="40" Height="20"/>
+                            <TextBox Text="{Binding rxIndex}" Margin="0,0,0,0" Width="20" Height="20"/>
+                            <TextBox Text="{Binding nonrx100}" Margin="0,0,0,0" Width="40" Height="20"/>
+                            <TextBox Text="{Binding nonrxIndex}" Margin="0,0,0,0" Width="20" Height="20"/>                            
+                        </StackPanel>
+                        <ItemsControl ItemsSource="{Binding abwesenheiten}">
+                            <ItemsControl.ItemTemplate> 
+                                <DataTemplate>
+                                    <TextBox Text="{Binding}" Width="140"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
+</Window>

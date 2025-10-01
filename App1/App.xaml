@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xaml:Application
+    xmlns:xaml="using:Microsoft.UI.Xaml"    
+    x:Class="Pooltriage2._0.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Pooltriage2._0"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+    <xaml:Application.Resources>
+        <xaml:ResourceDictionary>
+            <xaml:ResourceDictionary.MergedDictionaries>
+                <controls:XamlControlsResources />
+                <!-- Weitere Dictionaries hier -->
+                </xaml:ResourceDictionary.MergedDictionaries>
+            <!-- Weitere Ressourcen hier -->
+        </xaml:ResourceDictionary>
+    </xaml:Application.Resources>
+</xaml:Application>
